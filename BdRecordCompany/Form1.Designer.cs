@@ -31,7 +31,7 @@
             tbcGestion = new TabControl();
             tpRegistroEmpresa = new TabPage();
             pnlRegistroEmpresa = new Panel();
-            btnGuardar = new Button();
+            btnEmpresaGuardar = new Button();
             rbEmpresaCasaMatriz = new RadioButton();
             rbEmpresaSubsidiaria = new RadioButton();
             txtEmpresaNombre = new TextBox();
@@ -41,10 +41,10 @@
             lbEmpresaId = new Label();
             tpRegistroArtista = new TabPage();
             pnlRegistroArtista = new Panel();
-            cbProductorClasificacion = new ComboBox();
-            cbProductorAniosExp = new ComboBox();
+            cbxProductorClasificacion = new ComboBox();
+            cbxProductorAniosExp = new ComboBox();
             label1 = new Label();
-            button1 = new Button();
+            btnProductorGuardar = new Button();
             txtProductorNombre = new TextBox();
             txtProductorTarjeta = new TextBox();
             lbProductorAñosExp = new Label();
@@ -52,24 +52,29 @@
             lbProductorTarjeta = new Label();
             tpRegistroEmpresaProductor = new TabPage();
             panel1 = new Panel();
+            dtpVinculacionFechaFin = new DateTimePicker();
+            dtpVinculacionFechaIni = new DateTimePicker();
             lbVinculacionFechaFin = new Label();
             label5 = new Label();
-            button2 = new Button();
+            btnVincualacionGuardar = new Button();
             txtVinculacionTarjetaProfesional = new TextBox();
             txtVinculacionIdentificacion = new TextBox();
             lbVinculacionFechaIni = new Label();
             label3 = new Label();
             label4 = new Label();
             tpBuscarVinculacion = new TabPage();
-            tpConsultaContrato = new TabPage();
-            pnlConsultaContrato = new Panel();
-            dtpVinculacionFechaIni = new DateTimePicker();
-            dtpVinculacionFechaFin = new DateTimePicker();
-            label8 = new Label();
-            label7 = new Label();
-            button3 = new Button();
-            dateTimePicker2 = new DateTimePicker();
             panel2 = new Panel();
+            lbBuscarVinculacion = new Label();
+            lbVinculacionNumContratos = new Label();
+            dtpVinculacionFechaPick = new DateTimePicker();
+            btnVinculacionBuscar = new Button();
+            lbVinculacionFecha = new Label();
+            label8 = new Label();
+            tpConsultaContrato = new TabPage();
+            panel3 = new Panel();
+            dvgConsultaContrato = new DataGridView();
+            btnConsultaContrato = new Button();
+            label6 = new Label();
             tbcGestion.SuspendLayout();
             tpRegistroEmpresa.SuspendLayout();
             pnlRegistroEmpresa.SuspendLayout();
@@ -78,8 +83,10 @@
             tpRegistroEmpresaProductor.SuspendLayout();
             panel1.SuspendLayout();
             tpBuscarVinculacion.SuspendLayout();
-            tpConsultaContrato.SuspendLayout();
             panel2.SuspendLayout();
+            tpConsultaContrato.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgConsultaContrato).BeginInit();
             SuspendLayout();
             // 
             // tbcGestion
@@ -109,7 +116,7 @@
             // 
             // pnlRegistroEmpresa
             // 
-            pnlRegistroEmpresa.Controls.Add(btnGuardar);
+            pnlRegistroEmpresa.Controls.Add(btnEmpresaGuardar);
             pnlRegistroEmpresa.Controls.Add(rbEmpresaCasaMatriz);
             pnlRegistroEmpresa.Controls.Add(rbEmpresaSubsidiaria);
             pnlRegistroEmpresa.Controls.Add(txtEmpresaNombre);
@@ -122,14 +129,14 @@
             pnlRegistroEmpresa.Size = new Size(513, 345);
             pnlRegistroEmpresa.TabIndex = 1;
             // 
-            // btnGuardar
+            // btnEmpresaGuardar
             // 
-            btnGuardar.Location = new Point(205, 221);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
-            btnGuardar.TabIndex = 7;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnEmpresaGuardar.Location = new Point(205, 221);
+            btnEmpresaGuardar.Name = "btnEmpresaGuardar";
+            btnEmpresaGuardar.Size = new Size(75, 23);
+            btnEmpresaGuardar.TabIndex = 7;
+            btnEmpresaGuardar.Text = "Guardar";
+            btnEmpresaGuardar.UseVisualStyleBackColor = true;
             // 
             // rbEmpresaCasaMatriz
             // 
@@ -213,10 +220,10 @@
             // 
             // pnlRegistroArtista
             // 
-            pnlRegistroArtista.Controls.Add(cbProductorClasificacion);
-            pnlRegistroArtista.Controls.Add(cbProductorAniosExp);
+            pnlRegistroArtista.Controls.Add(cbxProductorClasificacion);
+            pnlRegistroArtista.Controls.Add(cbxProductorAniosExp);
             pnlRegistroArtista.Controls.Add(label1);
-            pnlRegistroArtista.Controls.Add(button1);
+            pnlRegistroArtista.Controls.Add(btnProductorGuardar);
             pnlRegistroArtista.Controls.Add(txtProductorNombre);
             pnlRegistroArtista.Controls.Add(txtProductorTarjeta);
             pnlRegistroArtista.Controls.Add(lbProductorAñosExp);
@@ -227,21 +234,21 @@
             pnlRegistroArtista.Size = new Size(513, 345);
             pnlRegistroArtista.TabIndex = 2;
             // 
-            // cbProductorClasificacion
+            // cbxProductorClasificacion
             // 
-            cbProductorClasificacion.FormattingEnabled = true;
-            cbProductorClasificacion.Location = new Point(172, 172);
-            cbProductorClasificacion.Name = "cbProductorClasificacion";
-            cbProductorClasificacion.Size = new Size(206, 23);
-            cbProductorClasificacion.TabIndex = 10;
+            cbxProductorClasificacion.FormattingEnabled = true;
+            cbxProductorClasificacion.Location = new Point(172, 172);
+            cbxProductorClasificacion.Name = "cbxProductorClasificacion";
+            cbxProductorClasificacion.Size = new Size(206, 23);
+            cbxProductorClasificacion.TabIndex = 10;
             // 
-            // cbProductorAniosExp
+            // cbxProductorAniosExp
             // 
-            cbProductorAniosExp.FormattingEnabled = true;
-            cbProductorAniosExp.Location = new Point(172, 136);
-            cbProductorAniosExp.Name = "cbProductorAniosExp";
-            cbProductorAniosExp.Size = new Size(206, 23);
-            cbProductorAniosExp.TabIndex = 9;
+            cbxProductorAniosExp.FormattingEnabled = true;
+            cbxProductorAniosExp.Location = new Point(172, 136);
+            cbxProductorAniosExp.Name = "cbxProductorAniosExp";
+            cbxProductorAniosExp.Size = new Size(206, 23);
+            cbxProductorAniosExp.TabIndex = 9;
             // 
             // label1
             // 
@@ -254,14 +261,14 @@
             label1.Text = " :Clasificación";
             label1.TextAlign = ContentAlignment.TopRight;
             // 
-            // button1
+            // btnProductorGuardar
             // 
-            button1.Location = new Point(195, 293);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 7;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            btnProductorGuardar.Location = new Point(195, 293);
+            btnProductorGuardar.Name = "btnProductorGuardar";
+            btnProductorGuardar.Size = new Size(75, 23);
+            btnProductorGuardar.TabIndex = 7;
+            btnProductorGuardar.Text = "Guardar";
+            btnProductorGuardar.UseVisualStyleBackColor = true;
             // 
             // txtProductorNombre
             // 
@@ -326,7 +333,7 @@
             panel1.Controls.Add(dtpVinculacionFechaIni);
             panel1.Controls.Add(lbVinculacionFechaFin);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnVincualacionGuardar);
             panel1.Controls.Add(txtVinculacionTarjetaProfesional);
             panel1.Controls.Add(txtVinculacionIdentificacion);
             panel1.Controls.Add(lbVinculacionFechaIni);
@@ -336,6 +343,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(513, 345);
             panel1.TabIndex = 2;
+            // 
+            // dtpVinculacionFechaFin
+            // 
+            dtpVinculacionFechaFin.Location = new Point(172, 168);
+            dtpVinculacionFechaFin.Name = "dtpVinculacionFechaFin";
+            dtpVinculacionFechaFin.Size = new Size(200, 23);
+            dtpVinculacionFechaFin.TabIndex = 11;
+            // 
+            // dtpVinculacionFechaIni
+            // 
+            dtpVinculacionFechaIni.Location = new Point(172, 136);
+            dtpVinculacionFechaIni.Name = "dtpVinculacionFechaIni";
+            dtpVinculacionFechaIni.Size = new Size(200, 23);
+            dtpVinculacionFechaIni.TabIndex = 10;
             // 
             // lbVinculacionFechaFin
             // 
@@ -359,14 +380,14 @@
             label5.Text = " :Tarjeta Profesional";
             label5.TextAlign = ContentAlignment.TopRight;
             // 
-            // button2
+            // btnVincualacionGuardar
             // 
-            button2.Location = new Point(205, 221);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 7;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
+            btnVincualacionGuardar.Location = new Point(205, 221);
+            btnVincualacionGuardar.Name = "btnVincualacionGuardar";
+            btnVincualacionGuardar.Size = new Size(75, 23);
+            btnVincualacionGuardar.TabIndex = 7;
+            btnVincualacionGuardar.Text = "Guardar";
+            btnVincualacionGuardar.UseVisualStyleBackColor = true;
             // 
             // txtVinculacionTarjetaProfesional
             // 
@@ -424,36 +445,65 @@
             tpBuscarVinculacion.Text = "Buscar Vinculación";
             tpBuscarVinculacion.UseVisualStyleBackColor = true;
             // 
-            // tpConsultaContrato
+            // panel2
             // 
-            tpConsultaContrato.Controls.Add(pnlConsultaContrato);
-            tpConsultaContrato.Location = new Point(4, 24);
-            tpConsultaContrato.Name = "tpConsultaContrato";
-            tpConsultaContrato.Size = new Size(760, 398);
-            tpConsultaContrato.TabIndex = 4;
-            tpConsultaContrato.Text = "Consulta Contrato Vigente";
-            tpConsultaContrato.UseVisualStyleBackColor = true;
+            panel2.Controls.Add(lbBuscarVinculacion);
+            panel2.Controls.Add(lbVinculacionNumContratos);
+            panel2.Controls.Add(dtpVinculacionFechaPick);
+            panel2.Controls.Add(btnVinculacionBuscar);
+            panel2.Controls.Add(lbVinculacionFecha);
+            panel2.Controls.Add(label8);
+            panel2.Location = new Point(48, 25);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(513, 345);
+            panel2.TabIndex = 3;
             // 
-            // pnlConsultaContrato
+            // lbBuscarVinculacion
             // 
-            pnlConsultaContrato.Location = new Point(31, 27);
-            pnlConsultaContrato.Name = "pnlConsultaContrato";
-            pnlConsultaContrato.Size = new Size(698, 345);
-            pnlConsultaContrato.TabIndex = 1;
+            lbBuscarVinculacion.AutoSize = true;
+            lbBuscarVinculacion.Location = new Point(167, 142);
+            lbBuscarVinculacion.Name = "lbBuscarVinculacion";
+            lbBuscarVinculacion.Size = new Size(37, 15);
+            lbBuscarVinculacion.TabIndex = 13;
+            lbBuscarVinculacion.Text = "______";
             // 
-            // dtpVinculacionFechaIni
+            // lbVinculacionNumContratos
             // 
-            dtpVinculacionFechaIni.Location = new Point(172, 136);
-            dtpVinculacionFechaIni.Name = "dtpVinculacionFechaIni";
-            dtpVinculacionFechaIni.Size = new Size(200, 23);
-            dtpVinculacionFechaIni.TabIndex = 10;
+            lbVinculacionNumContratos.AutoSize = true;
+            lbVinculacionNumContratos.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbVinculacionNumContratos.Location = new Point(35, 140);
+            lbVinculacionNumContratos.Name = "lbVinculacionNumContratos";
+            lbVinculacionNumContratos.Size = new Size(124, 17);
+            lbVinculacionNumContratos.TabIndex = 12;
+            lbVinculacionNumContratos.Text = " :Numero Contratos";
+            lbVinculacionNumContratos.TextAlign = ContentAlignment.TopRight;
             // 
-            // dtpVinculacionFechaFin
+            // dtpVinculacionFechaPick
             // 
-            dtpVinculacionFechaFin.Location = new Point(172, 168);
-            dtpVinculacionFechaFin.Name = "dtpVinculacionFechaFin";
-            dtpVinculacionFechaFin.Size = new Size(200, 23);
-            dtpVinculacionFechaFin.TabIndex = 11;
+            dtpVinculacionFechaPick.Location = new Point(167, 73);
+            dtpVinculacionFechaPick.Name = "dtpVinculacionFechaPick";
+            dtpVinculacionFechaPick.Size = new Size(200, 23);
+            dtpVinculacionFechaPick.TabIndex = 10;
+            // 
+            // btnVinculacionBuscar
+            // 
+            btnVinculacionBuscar.Location = new Point(217, 110);
+            btnVinculacionBuscar.Name = "btnVinculacionBuscar";
+            btnVinculacionBuscar.Size = new Size(75, 23);
+            btnVinculacionBuscar.TabIndex = 7;
+            btnVinculacionBuscar.Text = "Buscar";
+            btnVinculacionBuscar.UseVisualStyleBackColor = true;
+            // 
+            // lbVinculacionFecha
+            // 
+            lbVinculacionFecha.AutoSize = true;
+            lbVinculacionFecha.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbVinculacionFecha.Location = new Point(30, 79);
+            lbVinculacionFecha.Name = "lbVinculacionFecha";
+            lbVinculacionFecha.Size = new Size(87, 17);
+            lbVinculacionFecha.TabIndex = 2;
+            lbVinculacionFecha.Text = " :Fecha Inicio";
+            lbVinculacionFecha.TextAlign = ContentAlignment.TopRight;
             // 
             // label8
             // 
@@ -465,43 +515,52 @@
             label8.TabIndex = 1;
             label8.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // tpConsultaContrato
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label7.Location = new Point(31, 96);
-            label7.Name = "label7";
-            label7.Size = new Size(80, 17);
-            label7.TabIndex = 2;
-            label7.Text = "Fecha Inicio";
-            label7.TextAlign = ContentAlignment.TopRight;
+            tpConsultaContrato.Controls.Add(panel3);
+            tpConsultaContrato.Location = new Point(4, 24);
+            tpConsultaContrato.Name = "tpConsultaContrato";
+            tpConsultaContrato.Size = new Size(760, 398);
+            tpConsultaContrato.TabIndex = 4;
+            tpConsultaContrato.Text = "Consulta Contrato Vigente";
+            tpConsultaContrato.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // panel3
             // 
-            button3.Location = new Point(203, 267);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 7;
-            button3.Text = "Guardar";
-            button3.UseVisualStyleBackColor = true;
+            panel3.Controls.Add(dvgConsultaContrato);
+            panel3.Controls.Add(btnConsultaContrato);
+            panel3.Controls.Add(label6);
+            panel3.Location = new Point(124, 27);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(513, 345);
+            panel3.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // dvgConsultaContrato
             // 
-            dateTimePicker2.Location = new Point(168, 90);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 10;
+            dvgConsultaContrato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgConsultaContrato.Location = new Point(35, 68);
+            dvgConsultaContrato.Name = "dvgConsultaContrato";
+            dvgConsultaContrato.Size = new Size(447, 242);
+            dvgConsultaContrato.TabIndex = 11;
             // 
-            // panel2
+            // btnConsultaContrato
             // 
-            panel2.Controls.Add(dateTimePicker2);
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(label8);
-            panel2.Location = new Point(48, 25);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(513, 345);
-            panel2.TabIndex = 3;
+            btnConsultaContrato.Location = new Point(217, 27);
+            btnConsultaContrato.Name = "btnConsultaContrato";
+            btnConsultaContrato.Size = new Size(75, 23);
+            btnConsultaContrato.TabIndex = 7;
+            btnConsultaContrato.Text = "Consultar Contratos";
+            btnConsultaContrato.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label6.Location = new Point(35, 110);
+            label6.Name = "label6";
+            label6.Size = new Size(0, 17);
+            label6.TabIndex = 1;
+            label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
@@ -522,9 +581,12 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             tpBuscarVinculacion.ResumeLayout(false);
-            tpConsultaContrato.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            tpConsultaContrato.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgConsultaContrato).EndInit();
             ResumeLayout(false);
         }
 
@@ -537,29 +599,28 @@
         private TabPage tpBuscarVinculacion;
         private TabPage tpConsultaContrato;
         private Panel pnlRegistroEmpresa;
-        private Panel pnlConsultaContrato;
         private Label lbEmpresaId;
         private Label lbEmpresaNombre;
         private Label lbEmpresaTipo;
         private TextBox txtEmpresaNombre;
         private TextBox txtEmpresaId;
         private RadioButton rbEmpresaCasaMatriz;
-        private Button btnGuardar;
+        private Button btnEmpresaGuardar;
         private RadioButton rbEmpresaSubsidiaria;
         private Panel pnlRegistroArtista;
-        private Button button1;
+        private Button btnProductorGuardar;
         private TextBox txtProductorNombre;
         private TextBox txtProductorTarjeta;
         private Label lbProductorAñosExp;
         private Label lbProductorNombre;
         private Label lbProductorTarjeta;
         private Label label1;
-        private ComboBox cbProductorAniosExp;
-        private ComboBox cbProductorClasificacion;
+        private ComboBox cbxProductorAniosExp;
+        private ComboBox cbxProductorClasificacion;
         private Panel panel1;
         private Label lbVinculacionFechaFin;
         private Label label5;
-        private Button button2;
+        private Button btnVincualacionGuardar;
         private TextBox txtVinculacionTarjetaProfesional;
         private TextBox txtVinculacionIdentificacion;
         private Label lbVinculacionFechaIni;
@@ -568,9 +629,15 @@
         private DateTimePicker dtpVinculacionFechaFin;
         private DateTimePicker dtpVinculacionFechaIni;
         private Panel panel2;
-        private DateTimePicker dateTimePicker2;
-        private Button button3;
-        private Label label7;
+        private DateTimePicker dtpVinculacionFechaPick;
+        private Button btnVinculacionBuscar;
+        private Label lbVinculacionFecha;
         private Label label8;
+        private Panel panel3;
+        private DataGridView dvgConsultaContrato;
+        private Button btnConsultaContrato;
+        private Label label6;
+        private Label lbVinculacionNumContratos;
+        private Label lbBuscarVinculacion;
     }
 }
