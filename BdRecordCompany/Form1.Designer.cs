@@ -41,10 +41,10 @@
             lbEmpresaId = new Label();
             tpRegistroArtista = new TabPage();
             pnlRegistroArtista = new Panel();
+            btnProductorGuardarR = new Button();
             cbxProductorClasificacion = new ComboBox();
             cbxProductorAniosExp = new ComboBox();
             label1 = new Label();
-            btnProductorGuardar = new Button();
             txtProductorNombre = new TextBox();
             txtProductorTarjeta = new TextBox();
             lbProductorAñosExp = new Label();
@@ -137,6 +137,7 @@
             btnEmpresaGuardar.TabIndex = 7;
             btnEmpresaGuardar.Text = "Guardar";
             btnEmpresaGuardar.UseVisualStyleBackColor = true;
+            btnEmpresaGuardar.Click += btnEmpresaGuardar_Click;
             // 
             // rbEmpresaCasaMatriz
             // 
@@ -220,10 +221,10 @@
             // 
             // pnlRegistroArtista
             // 
+            pnlRegistroArtista.Controls.Add(btnProductorGuardarR);
             pnlRegistroArtista.Controls.Add(cbxProductorClasificacion);
             pnlRegistroArtista.Controls.Add(cbxProductorAniosExp);
             pnlRegistroArtista.Controls.Add(label1);
-            pnlRegistroArtista.Controls.Add(btnProductorGuardar);
             pnlRegistroArtista.Controls.Add(txtProductorNombre);
             pnlRegistroArtista.Controls.Add(txtProductorTarjeta);
             pnlRegistroArtista.Controls.Add(lbProductorAñosExp);
@@ -234,9 +235,20 @@
             pnlRegistroArtista.Size = new Size(513, 345);
             pnlRegistroArtista.TabIndex = 2;
             // 
+            // btnProductorGuardarR
+            // 
+            btnProductorGuardarR.Location = new Point(224, 229);
+            btnProductorGuardarR.Name = "btnProductorGuardarR";
+            btnProductorGuardarR.Size = new Size(75, 23);
+            btnProductorGuardarR.TabIndex = 11;
+            btnProductorGuardarR.Text = "Guardar";
+            btnProductorGuardarR.UseVisualStyleBackColor = true;
+            btnProductorGuardarR.Click += btnProductorGuardarR_Click;
+            // 
             // cbxProductorClasificacion
             // 
             cbxProductorClasificacion.FormattingEnabled = true;
+            cbxProductorClasificacion.Items.AddRange(new object[] { "Ejecutivo", "Delegado", "Productor" });
             cbxProductorClasificacion.Location = new Point(172, 172);
             cbxProductorClasificacion.Name = "cbxProductorClasificacion";
             cbxProductorClasificacion.Size = new Size(206, 23);
@@ -245,6 +257,7 @@
             // cbxProductorAniosExp
             // 
             cbxProductorAniosExp.FormattingEnabled = true;
+            cbxProductorAniosExp.Items.AddRange(new object[] { "menor a 5", "entre 5-10", "entre 11-20", "mayor 20 " });
             cbxProductorAniosExp.Location = new Point(172, 136);
             cbxProductorAniosExp.Name = "cbxProductorAniosExp";
             cbxProductorAniosExp.Size = new Size(206, 23);
@@ -260,15 +273,6 @@
             label1.TabIndex = 8;
             label1.Text = " :Clasificación";
             label1.TextAlign = ContentAlignment.TopRight;
-            // 
-            // btnProductorGuardar
-            // 
-            btnProductorGuardar.Location = new Point(195, 293);
-            btnProductorGuardar.Name = "btnProductorGuardar";
-            btnProductorGuardar.Size = new Size(75, 23);
-            btnProductorGuardar.TabIndex = 7;
-            btnProductorGuardar.Text = "Guardar";
-            btnProductorGuardar.UseVisualStyleBackColor = true;
             // 
             // txtProductorNombre
             // 
@@ -388,6 +392,7 @@
             btnVincualacionGuardar.TabIndex = 7;
             btnVincualacionGuardar.Text = "Guardar";
             btnVincualacionGuardar.UseVisualStyleBackColor = true;
+            btnVincualacionGuardar.Click += btnVincualacionGuardar_Click;
             // 
             // txtVinculacionTarjetaProfesional
             // 
@@ -530,7 +535,7 @@
             panel3.Controls.Add(dvgConsultaContrato);
             panel3.Controls.Add(btnConsultaContrato);
             panel3.Controls.Add(label6);
-            panel3.Location = new Point(124, 27);
+            panel3.Location = new Point(55, 23);
             panel3.Name = "panel3";
             panel3.Size = new Size(513, 345);
             panel3.TabIndex = 4;
@@ -639,5 +644,6 @@
         private Label label6;
         private Label lbVinculacionNumContratos;
         private Label lbBuscarVinculacion;
+        private Button btnProductorGuardarR;
     }
 }
